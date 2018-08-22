@@ -8,7 +8,7 @@ namespace WWL.Models
 {
     public class Team
     {
-        public List<string> Players { get; set; }
+        public List<Player> Players { get; set; }
         public int NumPlayers { get
             {
                 return Players.Count();
@@ -16,5 +16,7 @@ namespace WWL.Models
         }
         public TeamType TeamType { get; set; }
        
+        //set as Key
+        public int Id { get; set; }
     }
 }

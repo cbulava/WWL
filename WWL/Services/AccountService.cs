@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WWL.Models
+using WWL.Models;
 
 namespace WWL.Services
 {

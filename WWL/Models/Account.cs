@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WWL.Models;
 
 namespace WWL.Models
 {
@@ -24,5 +25,7 @@ namespace WWL.Models
         public int Status { get; set; }
 
         public bool LoggedIn { get; set; }
+
+        public List<Team> Teams { get; set; }
     }
 }
