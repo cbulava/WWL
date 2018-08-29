@@ -30,9 +30,9 @@ namespace WWL.Controllers
         // GET: api/<controller>
         [Route("login")]
         [HttpPost]
-        public IHttpActionResult Login(string account, string password)
+        public IHttpActionResult Login(string fnUsername, string password)
         {
-            var status = loginService.Login(account, password);
+            var status = loginService.Login(fnUsername, password);
             if (status.status == true)
                 return Ok(status.message);
             else
@@ -41,9 +41,9 @@ namespace WWL.Controllers
 
         [Route("logout")]
         [HttpGet]
-        public IHttpActionResult Logout(string account)
+        public IHttpActionResult Logout(string fnUsername)
         {
-            var status = loginService.Logout(account);
+            var status = loginService.Logout(fnUsername);
             if (status.status == true)
                 return Ok(status.message);
             else
@@ -52,9 +52,9 @@ namespace WWL.Controllers
 
         [Route("createAccount")]
         [HttpGet]
-        public IHttpActionResult CreateAccount(string FNUsername, string email, string password)
+        public IHttpActionResult CreateAccount(string fnUsername, string email, string password)
         {
-            var status = accountService.CreateAccount(FNUsername, email, password);
+            var status = accountService.CreateAccount(fnUsername, email, password);
             if (status.status == true)
                 return Ok(status.message);
             else
@@ -66,7 +66,7 @@ namespace WWL.Controllers
         [HttpGet]
         public IHttpActionResult ChangeEmail(string email)
         {
-            var status = accountService.changeEmail(email);
+            var status = accountService.ChangeEmail(email);
             if (status.status == true)
                 return Ok(status.message);
             else
@@ -77,7 +77,7 @@ namespace WWL.Controllers
         [HttpGet]
         public IHttpActionResult ChangePassword(string password)
         {
-            var status = accountService.changePassword(password);
+            var status = accountService.ChangePassword(password);
             if (status.status == true)
                 return Ok(status.message);
             else
@@ -88,7 +88,7 @@ namespace WWL.Controllers
         [HttpGet]
         public IHttpActionResult ChangeUsername(string FNUsername)
         {
-            var status = accountService.changeUsername(FNUsername);
+            var status = accountService.ChangeUsername(FNUsername);
             if (status.status == true)
                 return Ok(status.message);
             else
